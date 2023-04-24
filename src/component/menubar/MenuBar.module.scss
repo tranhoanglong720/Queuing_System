@@ -1,0 +1,142 @@
+.wrap_Menubar {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100vh;
+}
+.wrap_Menubar_content {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.wrap_Menubar_content_txt {
+  margin-left: 40px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+.wrap_Menubar_content.Dash {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(255, 117, 6, 1);
+  border-radius: 15px;
+  margin-right: 30px;
+  color: white;
+}
+
+.wrap_Menubar_content.Device {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(255, 117, 6, 1);
+  border-radius: 15px;
+  margin-right: 30px;
+  color: white;
+}
+.wrap_Menubar_content.Service {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(255, 117, 6, 1);
+  border-radius: 15px;
+  margin-right: 30px;
+  color: white;
+}
+.wrap_Menubar_content.Level {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(255, 117, 6, 1);
+  border-radius: 15px;
+  margin-right: 30px;
+  color: white;
+}
+.wrap_Menubar_content.Report {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(255, 117, 6, 1);
+  border-radius: 15px;
+  margin-right: 30px;
+  color: white;
+}
+.wrap_Menubar_content_txt.Acount {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(255, 117, 6, 1);
+  border-radius: 15px;
+  margin-right: 30px;
+  color: white;
+}
+.wrap_Menubar_content_txt.Rule {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(255, 117, 6, 1);
+  border-radius: 15px;
+  margin-right: 30px;
+  color: white;
+}
+.wrap_Menubar_content_txt.Diary {
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(255, 117, 6, 1);
+  border-radius: 15px;
+  margin-right: 30px;
+  color: white;
+}
+.wrap_Menubar_txt {
+  margin-bottom: 0px;
+  margin-left: 5px;
+}
+.wrap_Menubar_txt_lui {
+  margin-top: 5px;
+  margin-left: 60px;
+  cursor: pointer;
+}
+.wrap_Menubar_content .active {
+  background-color: rgba(255, 117, 6, 1);
+  border-radius: 15px;
+  margin-right: 30px;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+.logout {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  background-color: rgba(255, 242, 231, 1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,33 @@
+.header-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.header-left {
+  width: 40%;
+}
+.header-right-search {
+  width: 40%;
+}
+.wrap-header {
+  padding: 30px;
+}
+.header-avatar {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header_right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.active {
+  color: rgba(126, 125, 136, 1);
+}
+.noactive {
+  color: rgba(255, 145, 56, 1);
+}
