@@ -10,6 +10,10 @@ import Report from "../pages/report/Report";
 import ManagerRule from "../pages/managerrule/ManagerRule";
 import ManagerDiary from "../pages/managerdiary/ManagerDiary";
 import ManagerAcount from "../pages/manageracount/ManagerAcount";
+import AddDevice from "../pages/adddevice/AddDevice";
+import DeviceDetail from "../pages/devicedetail/DeviceDetail";
+import DeviceUpdate from "../pages/deviceupdate/DeviceUpdate";
+import ServiceAdd from "../pages/serviceadd/ServiceAdd";
 
 const publicRoutes = [
   { path: "/", component: Login },
@@ -24,6 +28,10 @@ const publicRoutes = [
   { path: "/managerrule", component: ManagerRule },
   { path: "/managerdiary", component: ManagerDiary },
   { path: "/manageracount", component: ManagerAcount },
+  { path: "/adddevice", component: AddDevice },
+  { path: "/devicedetail", component: DeviceDetail },
+  { path: "/deviceupdate", component: DeviceUpdate },
+  { path: "/serviceadd", component: ServiceAdd },
 ];
 
 const privateRoutes: any = [];

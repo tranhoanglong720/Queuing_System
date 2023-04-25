@@ -22,39 +22,16 @@ const Header = () => {
   return (
     <Container fluid className={cx("wrap-header")}>
       <Row>
-        <Col lg={2}>
+        <Col lg={4}>
           <div className={cx("header_right")}>
             {name ? (
               <h6 className={cx(`${list ? "active" : "noactive"}`)}>{name}</h6>
             ) : null}
-            {list ? (
-              <h5
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                &gt;
-              </h5>
-            ) : null}
+            {list ? <p style={{ marginBottom: 10 }}>&gt;</p> : null}
             {list ? (
               <h6 className={cx(`${model ? "active" : "noactive"}`)}>{list}</h6>
             ) : null}
-            {model ? (
-              <h5
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginBottom: 20,
-                }}
-              >
-                &gt;
-              </h5>
-            ) : null}
+            {model ? <p style={{ marginBottom: 10 }}>&gt;</p> : null}
             {model ? (
               <h6 className={cx(`${model ? "noactive" : "active"}`)}>
                 {model}
@@ -62,7 +39,7 @@ const Header = () => {
             ) : null}
           </div>
         </Col>
-        <Col lg={10} className={cx("header-right")}>
+        <Col lg={8} className={cx("header-right")}>
           <BellOutlined
             style={{ fontSize: 24, color: "rgba(255, 172, 106, 1)" }}
           />

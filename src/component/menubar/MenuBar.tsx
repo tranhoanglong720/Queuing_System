@@ -27,7 +27,7 @@ const Menubar = () => {
   };
   const handlePageService = () => {
     setActive("Service");
-    navigate("/service");
+    navigate("/service?name=Dịch vụ&list=Danh sách dịch vụ");
   };
   const handlePageLevel = () => {
     setActive("Level");

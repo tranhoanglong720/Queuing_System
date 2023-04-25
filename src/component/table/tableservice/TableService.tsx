@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./TableDevice.module.scss";
+import styles from "./TableService.module.scss";
 import classnames from "classnames/bind";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/esm/Row";
@@ -8,16 +8,16 @@ import Table from "react-bootstrap/Table";
 import { useNavigate } from "react-router-dom";
 const cx = classnames.bind(styles);
 
-const TableService = () => {
+const TableDevice = () => {
   const navigate = useNavigate();
   const handleChangeDetail = () => {
     navigate(
-      "/devicedetail?name=Thiết bị&list=Danh sách thiết bị&model=Chi tiết thiết bị"
+      "/servicedetail?name=Dịch vụ&list=Danh sách dịch vụ&model=Chi tiết dịch vụ"
     );
   };
   const handleChangeUpdate = () => {
     navigate(
-      "/deviceupdate?name=Thiết bị&list=Danh sách thiết bị&model=Chi tiết thiết bị"
+      "/serviceupdate?name=Dịch vụ&list=Danh sách dịch vụ&model=Cập nhật dịch vụ"
     );
   };
   return (
@@ -26,10 +26,12 @@ const TableService = () => {
         <Table striped bordered variant="white">
           <thead className={cx("wrap_Table")}>
             <tr>
-              <th>Mã dịch vụ</th>
-              <th>Tên dịch vụ</th>
-              <th>Mô tả</th>
+              <th>Mã thiết bị</th>
+              <th>Tên thiết bị</th>
+              <th>Địa chỉ IP</th>
               <th>Trạng thái hoạt động</th>
+              <th>Trạng thái kết nối</th>
+              <th>Dịch vụ</th>
               <th></th>
               <th></th>
             </tr>
@@ -38,7 +40,7 @@ const TableService = () => {
             <tr>
               <td>KIO_01</td>
               <td>Kiosk</td>
-              <td>Mô tả dịch vụ 2</td>
+              <td>192.168.1.10</td>
               <td>
                 <div>
                   <img
@@ -48,13 +50,23 @@ const TableService = () => {
                   Ngưng hoạt động
                 </div>
               </td>
+              <td>
+                <div>
+                  <img
+                    src={require("../../../assent/do.png")}
+                    style={{ marginBottom: 5, marginRight: 2 }}
+                  />
+                  Mất kết nối
+                </div>
+              </td>
+              <td>Khám tim mạch, Khám mắt...</td>
               <td>Chi tiết</td>
               <td>Cập nhật</td>
             </tr>
             <tr>
               <td>KIO_01</td>
               <td>Kiosk</td>
-              <td>Mô tả dịch vụ 1</td>
+              <td>192.168.1.10</td>
               <td>
                 <div>
                   <img
@@ -64,6 +76,17 @@ const TableService = () => {
                   Hoạt động
                 </div>
               </td>
+              <td>
+                <div>
+                  {" "}
+                  <img
+                    src={require("../../../assent/xanh.png")}
+                    style={{ marginBottom: 5, marginRight: 2 }}
+                  />
+                  Kết nối
+                </div>
+              </td>
+              <td>Khám tim mạch, Khám mắt...</td>
               <td onClick={handleChangeDetail} className={cx("txtDetail")}>
                 <a>Chi tiết</a>
               </td>
@@ -78,4 +101,4 @@ const TableService = () => {
   );
 };
 
-export default TableService;
+export default TableDevice;

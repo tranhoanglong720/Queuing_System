@@ -1,0 +1,66 @@
+.txtFormTitle {
+  color: rgba(255, 117, 6, 1);
+}
+.wrapFormAdd {
+  background-color: white;
+  padding: 15px;
+  padding-bottom: 15vh;
+  border-radius: 15px;
+  height: 70vh;
+  width: 90%;
+}
+.Inputtemptxt {
+  line-height: 24px;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 15px;
+}
+.addForm {
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-between;
+}
+.addLeft {
+  width: 80vh;
+}
+.btn {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btnCancel {
+  background-color: rgba(255, 242, 231, 1);
+  color: rgba(255, 145, 56, 1);
+  border-color: rgba(255, 242, 231, 1);
+  margin-right: 15px;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+.btnAdd {
+  background-color: rgba(255, 145, 56, 1);
+  color: white;
+  border-color: rgba(255, 145, 56, 1);
+  margin-right: 15px;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+.wrapEdit {
+  cursor: pointer;
+  width: 100px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 242, 231, 1);
+  top: 150px;
+  right: 15px;
+  padding: 10px;
+  border-radius: 15px;
+}
+.txtEdit {
+  color: rgba(255, 117, 6, 1);
+  text-align: center;
+}

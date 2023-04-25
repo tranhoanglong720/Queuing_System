@@ -1,15 +1,15 @@
 import React from "react";
-import styles from "./Service.module.scss";
+import styles from "./AddDevice.module.scss";
 import classNames from "classnames/bind";
 import Header from "../../component/header/Header";
 import Menubar from "../../component/menubar/MenuBar";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import ListService from "../../component/listservice/ListService";
+import FormAddDevice from "../../component/form/formadddevice/FormAddDevice";
 
 const cx = classNames.bind(styles);
-const Service = () => {
+const AddDevice = () => {
   return (
     <Container fluid className={cx("wrap_divce")}>
       <Row>
@@ -18,13 +18,12 @@ const Service = () => {
         </Col>
         <Col lg={10}>
           <Header />
-          <div className={cx("wrap_info")}>
-            <ListService />
-          </div>
+          <h5 className={cx("addtxt")}>Quản lý thiết bị</h5>
+          <FormAddDevice />
         </Col>
       </Row>
     </Container>
   );
 };
 
-export default Service;
+export default AddDevice;

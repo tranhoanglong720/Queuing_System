@@ -1,0 +1,21 @@
+.title {
+  color: rgba(255, 117, 6, 1);
+}
+.btnThem {
+  color: rgba(255, 117, 6, 1);
+  text-align: center;
+}
+.wrapAdd {
+  cursor: pointer;
+  width: 80px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 242, 231, 1);
+  top: 120px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 15px;
+}
