@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./TableDevice.module.scss";
+import styles from "./TableLevel.module.scss";
 import classnames from "classnames/bind";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/esm/Row";
@@ -8,67 +8,49 @@ import Table from "react-bootstrap/Table";
 import { useNavigate } from "react-router-dom";
 const cx = classnames.bind(styles);
 
-const TableDevice = () => {
+const TableLevel = () => {
   const navigate = useNavigate();
   const handleChangeDetail = () => {
     navigate(
-      "/devicedetail?name=Thiết bị&list=Danh sách thiết bị&model=Chi tiết thiết bị"
+      "/leveldetail?name=Cấp số&list=Danh sách cấp số&model=Chi tiết cấp số"
     );
   };
-  const handleChangeUpdate = () => {
-    navigate(
-      "/deviceeupdate?name=Thiết bị&list=Danh sách thiết bị&model=Chi tiết thiết bị"
-    );
-  };
+
   return (
     <Container>
       <div className={cx("wrapListDevice")}>
         <Table striped bordered variant="white">
           <thead className={cx("wrap_Table")}>
             <tr>
-              <th>Mã dịch vụ</th>
+              <th>STT</th>
+              <th>Tên khách hàng</th>
               <th>Tên dịch vụ</th>
-              <th>Mô tả</th>
-              <th>Trạng thái hoạt động</th>
-              <th></th>
+              <th>Thời gian cấp</th>
+              <th>Hạn sử dụng</th>
+              <th>Trạng thái</th>
+              <th>Nguồn cấp</th>
               <th></th>
             </tr>
           </thead>
           <tbody className={cx("wrap_Table_body")}>
             <tr>
-              <td>KIO_01</td>
-              <td>Kiosk</td>
-              <td>Mô tả dịch vụ 2</td>
+              <td>2010001</td>
+              <td>Lê Huỳnh Ái Vân</td>
+              <td>Khám tim mạch</td>
+              <td>14:35 - 07/11/2021</td>
+              <td>14:35 - 12/11/2021</td>
               <td>
                 <div>
                   <img
                     src={require("../../../assent/do.png")}
                     style={{ marginBottom: 5, marginRight: 2 }}
                   />
-                  Ngưng hoạt động
+                  Bỏ qua
                 </div>
               </td>
-              <td>Chi tiết</td>
-              <td>Cập nhật</td>
-            </tr>
-            <tr>
-              <td>KIO_01</td>
               <td>Kiosk</td>
-              <td>Mô tả dịch vụ 1</td>
-              <td>
-                <div>
-                  <img
-                    src={require("../../../assent/xanh.png")}
-                    style={{ marginBottom: 5, marginRight: 2 }}
-                  />
-                  Hoạt động
-                </div>
-              </td>
               <td onClick={handleChangeDetail} className={cx("txtDetail")}>
-                <a>Chi tiết</a>
-              </td>
-              <td>
-                <a>Cập nhật</a>
+                Chi tiết
               </td>
             </tr>
           </tbody>
@@ -78,4 +60,4 @@ const TableDevice = () => {
   );
 };
 
-export default TableDevice;
+export default TableLevel;

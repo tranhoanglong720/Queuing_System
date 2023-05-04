@@ -1,15 +1,15 @@
 import React from "react";
-import styles from "./Report.module.scss";
+import styles from "./Service.module.scss";
 import classNames from "classnames/bind";
 import Header from "../../component/header/Header";
 import Menubar from "../../component/menubar/MenuBar";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import ListReport from "../../component/listreport/ListReport";
+import FormUpdateService from "../../component/form/formupdateservice/FormUpdateService";
 
 const cx = classNames.bind(styles);
-const Report = () => {
+const ServiceUpdate = () => {
   return (
     <Container fluid className={cx("wrap_divce")}>
       <Row>
@@ -18,13 +18,12 @@ const Report = () => {
         </Col>
         <Col lg={10}>
           <Header />
-          <div className={cx("wrap_info")}>
-            <ListReport />
-          </div>
+          <h5 className={cx("addtxt")}>Quản lý dịch vụ</h5>
+          <FormUpdateService />
         </Col>
       </Row>
     </Container>
   );
 };
 
-export default Report;
+export default ServiceUpdate;

@@ -6,6 +6,7 @@ import Menubar from "../../component/menubar/MenuBar";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
+import ListDiary from "../../component/listdiary/ListDiary";
 
 const cx = classNames.bind(styles);
 
@@ -18,7 +19,9 @@ const ManagerDiary = () => {
         </Col>
         <Col lg={10}>
           <Header />
-          <div className={cx("wrap_info")}></div>
+          <div className={cx("wrap_info")}>
+            <ListDiary />
+          </div>
         </Col>
       </Row>
     </Container>

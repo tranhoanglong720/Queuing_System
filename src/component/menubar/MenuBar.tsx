@@ -31,23 +31,23 @@ const Menubar = () => {
   };
   const handlePageLevel = () => {
     setActive("Level");
-    navigate("/level");
+    navigate("/level?name=Cấp số&list=Danh sách cấp số");
   };
   const handlePageReport = () => {
     setActive("Report");
-    navigate("/report");
+    navigate("/report?name=Báo cáo&list=Lập báo cáo");
   };
   const handlePageAcount = () => {
     setActive("Acount");
-    navigate("/manageracount");
+    navigate("/manageracount?name=Cài đặt hệ thống&list=Quản lý tài khoản");
   };
   const handlePageRule = () => {
     setActive("Rule");
-    navigate("/managerrule");
+    navigate("/managerrule?name=Cài đặt hệ thống&list=Quản lý vai trò");
   };
   const handlePageDiary = () => {
     setActive("Diary");
-    navigate("/managerdiary");
+    navigate("/managerdiary?name=Cài đặt hệ thống&list=Nhật ký hoạt động");
   };
   return (
     <div className={cx("wrap_Menubar")}>

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./FormAddService.module.scss";
+import styles from "./FormUpdateService.module.scss";
 import classNames from "classnames/bind";
 
 import { Container } from "react-bootstrap";
@@ -10,7 +10,7 @@ import type { SelectProps } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import type { CheckboxValueType } from "antd/es/checkbox/Group";
 const cx = classNames.bind(styles);
-const FormAddService = () => {
+const FormUpdateService = () => {
   const options: SelectProps["options"] = [];
 
   for (let i = 10; i < 36; i++) {
@@ -95,10 +95,10 @@ const FormAddService = () => {
       </div>
       <div className={cx("btn")}>
         <button className={cx("btnCancel")}>Hủy bỏ</button>
-        <button className={cx("btnAdd")}>Thêm dịch vụ</button>
+        <button className={cx("btnAdd")}>Cập nhật</button>
       </div>
     </div>
   );
 };
 
-export default FormAddService;
+export default FormUpdateService;

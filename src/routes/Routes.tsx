@@ -14,6 +14,10 @@ import AddDevice from "../pages/adddevice/AddDevice";
 import DeviceDetail from "../pages/devicedetail/DeviceDetail";
 import DeviceUpdate from "../pages/deviceupdate/DeviceUpdate";
 import ServiceAdd from "../pages/serviceadd/ServiceAdd";
+import ServiceDetail from "../pages/servicedetail/ServiceDetail";
+import ServiceUpdate from "../pages/serviceupdate/ServiceUpdate";
+import LevelAdd from "../pages/leveladd/LevelAdd";
+import LevelDetail from "../pages/leveldetail/LevelDetail";
 
 const publicRoutes = [
   { path: "/", component: Login },
@@ -32,6 +36,10 @@ const publicRoutes = [
   { path: "/devicedetail", component: DeviceDetail },
   { path: "/deviceupdate", component: DeviceUpdate },
   { path: "/serviceadd", component: ServiceAdd },
+  { path: "/servicedetail", component: ServiceDetail },
+  { path: "/serviceupdate", component: ServiceUpdate },
+  { path: "/leveladd", component: LevelAdd },
+  { path: "/leveldetail", component: LevelDetail },
 ];
 
 const privateRoutes: any = [];

@@ -7,8 +7,9 @@ import Col from "react-bootstrap/esm/Col";
 import FilterDevice from "../filter/filterdivice/FilterDevice";
 import TableDevice from "../table/tabledevice/TableDevice";
 import { useNavigate } from "react-router-dom";
-import TableService from "../table/tabledevice/TableDevice";
+
 import FilterService from "../filter/filterservice/FilterDevice";
+import TableService from "../table/tableservice/TableService";
 
 const cx = classnames.bind(styles);
 

@@ -37,6 +37,10 @@ interface AppContextProps {
 
   setRerender: (reRender: boolean) => void;
 
+  openIn: boolean;
+
+  setOpenIn: (openIn: boolean) => void;
+
   clearState: () => void;
 }
 
@@ -61,6 +65,8 @@ const AppProvider: React.FC<any> = ({ children }) => {
 
   const [reRender, setRerender] = useState<boolean>(false);
 
+  const [openIn, setOpenIn] = useState<boolean>(false);
+
   const clearState = () => {
     setShow(false);
 
@@ -77,6 +83,8 @@ const AppProvider: React.FC<any> = ({ children }) => {
     setchangeDate(false);
 
     setRerender(false);
+
+    setOpenIn(false);
 
     setItem({});
   };
@@ -102,6 +110,8 @@ const AppProvider: React.FC<any> = ({ children }) => {
         setPacked,
         reRender,
         setRerender,
+        openIn,
+        setOpenIn,
         clearState,
       }}
     >

@@ -1,15 +1,14 @@
 import React from "react";
 import styles from "./Level.module.scss";
 import classNames from "classnames/bind";
-import Header from "../../component/header/Header";
+import { Container, Col, Row } from "react-bootstrap";
 import Menubar from "../../component/menubar/MenuBar";
-import { Container } from "react-bootstrap";
-import Row from "react-bootstrap/esm/Row";
-import Col from "react-bootstrap/esm/Col";
-import ListLevel from "../../component/listlevel/ListLevel";
+import Header from "../../component/header/Header";
+import FormAddLevel from "../../component/form/formaddlevel/FormAddLevel";
 
 const cx = classNames.bind(styles);
-const Level = () => {
+
+const LevelAdd = () => {
   return (
     <Container fluid className={cx("wrap_divce")}>
       <Row>
@@ -18,13 +17,12 @@ const Level = () => {
         </Col>
         <Col lg={10}>
           <Header />
-          <div className={cx("wrap_info")}>
-            <ListLevel />
-          </div>
+          <h5 className={cx("addtxt")}>Quản lý cấp số</h5>
+          <FormAddLevel />
         </Col>
       </Row>
     </Container>
   );
 };
 
-export default Level;
+export default LevelAdd;

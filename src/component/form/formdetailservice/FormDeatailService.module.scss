@@ -1,0 +1,77 @@
+.serviceleft {
+  display: flex;
+  flex-direction: row;
+}
+.txtMa {
+  margin-left: 15px;
+  text-align: center;
+}
+.txtFormTitle {
+  color: rgba(255, 117, 6, 1);
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+}
+.formserviceDetail {
+  margin-top: 30px;
+}
+.lblMa {
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.detailServiceLeft {
+  background-color: rgba(255, 255, 255, 1);
+  height: 70vh;
+  border-radius: 15px;
+  padding: 15px;
+}
+.detailServiceRight {
+  background-color: rgba(255, 255, 255, 1);
+  height: 70vh;
+  border-radius: 15px;
+  padding: 15px;
+}
+.wrap_Table {
+  background-color: rgba(255, 145, 56, 1);
+  cursor: pointer;
+  color: white;
+  border-width: none;
+  border-radius: 15px;
+}
+.wrap {
+  margin-top: 15px;
+}
+.wrapEdit {
+  cursor: pointer;
+  width: 100px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 242, 231, 1);
+  top: 150px;
+  right: 15px;
+  padding: 10px;
+  border-radius: 15px;
+}
+.txtEdit {
+  margin-top: 2px;
+  text-align: center;
+  color: rgba(255, 117, 6, 1);
+}
+.wrapBack {
+  cursor: pointer;
+  width: 100px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 242, 231, 1);
+  top: 250px;
+  right: 15px;
+  padding: 10px;
+  border-radius: 15px;
+}

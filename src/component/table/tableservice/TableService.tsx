@@ -8,7 +8,7 @@ import Table from "react-bootstrap/Table";
 import { useNavigate } from "react-router-dom";
 const cx = classnames.bind(styles);
 
-const TableDevice = () => {
+const TableService = () => {
   const navigate = useNavigate();
   const handleChangeDetail = () => {
     navigate(
@@ -101,4 +101,4 @@ const TableDevice = () => {
   );
 };
 
-export default TableDevice;
+export default TableService;
