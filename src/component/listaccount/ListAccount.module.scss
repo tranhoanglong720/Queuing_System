@@ -7,23 +7,15 @@
 }
 .wrapAdd {
   cursor: pointer;
-  width: 80px;
+  width: 90px;
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 242, 231, 1);
-  top: 100px;
+  top: 110px;
   right: 10px;
   padding: 10px;
   border-radius: 15px;
-}
-.dateFrom {
-  margin-right: 15px;
-}
-.filter {
-  display: flex;
-  flex-direction: row;
-  // justify-content: space-around;
 }

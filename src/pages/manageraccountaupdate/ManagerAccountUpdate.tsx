@@ -1,15 +1,16 @@
 import React from "react";
-import styles from "./ManagerAcount.module.scss";
+import styles from "./ManagerRuleAdd.module.scss";
 import classNames from "classnames/bind";
 import Header from "../../component/header/Header";
 import Menubar from "../../component/menubar/MenuBar";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import ListAccount from "../../component/listaccount/ListAccount";
+
+import FormUpdateAccount from "../../component/form/formupdateaccount/FormUpdateAccount";
 
 const cx = classNames.bind(styles);
-const ManagerAcount = () => {
+const ManagerAcountUpdate = () => {
   return (
     <Container fluid className={cx("wrap_divce")}>
       <Row>
@@ -18,13 +19,12 @@ const ManagerAcount = () => {
         </Col>
         <Col lg={10}>
           <Header />
-          <div className={cx("wrap_info")}>
-            <ListAccount />
-          </div>
+          <h5 className={cx("addtxt")}>Quản lý Tài khoản</h5>
+          <FormUpdateAccount />
         </Col>
       </Row>
     </Container>
   );
 };
 
-export default ManagerAcount;
+export default ManagerAcountUpdate;

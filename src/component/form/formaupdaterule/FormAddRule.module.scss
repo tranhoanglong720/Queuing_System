@@ -1,0 +1,71 @@
+.txtFormTitle {
+  color: rgba(255, 117, 6, 1);
+
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.wrapFormAdd {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  padding-bottom: 15vh;
+  height: 60vh;
+  border-radius: 15px;
+}
+
+.Inputtemptxt {
+  line-height: 24px;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 15px;
+}
+.addForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.AddCheck {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  // justify-content: space-around;
+}
+.addLeft {
+  width: 80vh;
+}
+.addRight {
+  width: 80vh;
+}
+.btn {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btnCancel {
+  background-color: rgba(255, 242, 231, 1);
+  color: rgba(255, 145, 56, 1);
+  border-color: rgba(255, 242, 231, 1);
+  margin-right: 15px;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+.btnAdd {
+  background-color: rgba(255, 145, 56, 1);
+  color: white;
+  border-color: rgba(255, 145, 56, 1);
+  margin-right: 15px;
+  border-radius: 10px;
+  padding: 5px 20px;
+}
+.SelectRole {
+  background-color: rgba(255, 242, 231, 1);
+  padding: 15px;
+}

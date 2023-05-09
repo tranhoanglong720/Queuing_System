@@ -10,7 +10,11 @@ const cx = classNames.bind(styles);
 
 const ListRole = () => {
   const navigate = useNavigate();
-
+  const handleChangePageAddRule = () => {
+    navigate(
+      "/managerruleadd?name=Vai Trò&list=Quản lý vai trò&model=Thêm vai trò"
+    );
+  };
   return (
     <Container>
       <div className={cx("wrapListDevice")}>
@@ -22,7 +26,7 @@ const ListRole = () => {
           </div>
         </div>
         <TableRole />
-        <div className={cx("wrapAdd")}>
+        <div className={cx("wrapAdd")} onClick={handleChangePageAddRule}>
           <img
             src={require("../../assent/add-square.png")}
             style={{ width: "50%" }}

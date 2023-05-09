@@ -18,6 +18,10 @@ import ServiceDetail from "../pages/servicedetail/ServiceDetail";
 import ServiceUpdate from "../pages/serviceupdate/ServiceUpdate";
 import LevelAdd from "../pages/leveladd/LevelAdd";
 import LevelDetail from "../pages/leveldetail/LevelDetail";
+import ManagerRuleAdd from "../pages/managerruleadd/ManagerRuleAdd";
+import ManagerRuleUpdate from "../pages/managerruleupdate/ManagerRuleUpdate";
+import ManagerAcountAdd from "../pages/manageraccountadd/ManagerAccountAdd";
+import ManagerAcountUpdate from "../pages/manageraccountaupdate/ManagerAccountUpdate";
 
 const publicRoutes = [
   { path: "/", component: Login },
@@ -40,6 +44,10 @@ const publicRoutes = [
   { path: "/serviceupdate", component: ServiceUpdate },
   { path: "/leveladd", component: LevelAdd },
   { path: "/leveldetail", component: LevelDetail },
+  { path: "/managerruleadd", component: ManagerRuleAdd },
+  { path: "/managerruleupdate", component: ManagerRuleUpdate },
+  { path: "/manageraccountadd", component: ManagerAcountAdd },
+  { path: "/manageraccountupdate", component: ManagerAcountUpdate },
 ];
 
 const privateRoutes: any = [];

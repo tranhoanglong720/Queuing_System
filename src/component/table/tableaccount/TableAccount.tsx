@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./TableReport.module.scss";
+import styles from "./TableDevice.module.scss";
 import classnames from "classnames/bind";
 import { Container } from "react-bootstrap";
 import Row from "react-bootstrap/esm/Row";
@@ -8,43 +8,48 @@ import Table from "react-bootstrap/Table";
 import { useNavigate } from "react-router-dom";
 const cx = classnames.bind(styles);
 
-const TableReport = () => {
+const TableAccount = () => {
   const navigate = useNavigate();
-  const handleChangeDetail = () => {
+
+  const handleChangeUpdate = () => {
     navigate(
-      "/leveldetail?name=Cấp số&list=Danh sách cấp số&model=Chi tiết cấp số"
+      "/manageraccountupdate?name=Cài đặt hệ thống&list=Quản lý tài khoản&model=Cập nhật tài khoản"
     );
   };
-
   return (
     <Container>
       <div className={cx("wrapListDevice")}>
         <Table striped bordered variant="white">
           <thead className={cx("wrap_Table")}>
             <tr>
-              <th>Số thứ tự</th>
-              <th>Tên dịch vụ</th>
-              <th>Thời gian cấp</th>
-              <th>Tình trạng</th>
-              <th>Nguồn cấp</th>
+              <th>Tên đăng nhập</th>
+              <th>Họ tên</th>
+              <th>Số điện thoại</th>
+              <th>Email</th>
+              <th>Vai trò</th>
+              <th>Trạng thái hoạt động</th>
+              <th></th>
             </tr>
           </thead>
           <tbody className={cx("wrap_Table_body")}>
             <tr>
-              <td>2010001</td>
-              <td>Khám tim mạch</td>
-              <td>07:20 - 07/10/2021</td>
+              <td>tuyetnguyen@12</td>
+              <td>Nguyen Văn A</td>
+              <td>0919256712</td>
+              <td>tuyetnguyen123@gmail.com</td>
+              <td>Kế toán</td>
               <td>
                 <div>
-                  {" "}
                   <img
                     src={require("../../../assent/xanh.png")}
                     style={{ marginBottom: 5, marginRight: 2 }}
                   />
-                  Đang chờ
+                  Hoạt động
                 </div>
               </td>
-              <td>Kiosk</td>
+              <td onClick={handleChangeUpdate} className={cx("txtDetail")}>
+                <a>Cập nhật</a>
+              </td>
             </tr>
           </tbody>
         </Table>
@@ -53,4 +58,4 @@ const TableReport = () => {
   );
 };
 
-export default TableReport;
+export default TableAccount;

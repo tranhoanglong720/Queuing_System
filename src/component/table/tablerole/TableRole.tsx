@@ -12,7 +12,7 @@ const TableRole = () => {
   const navigate = useNavigate();
   const handleChangeDetail = () => {
     navigate(
-      "/leveldetail?name=Cấp số&list=Danh sách cấp số&model=Chi tiết cấp số"
+      "/managerruleupdate?name=Vai Trò&list=Quản Lý Vai Trò &model=Cập nhật vai trò"
     );
   };
 
@@ -35,7 +35,9 @@ const TableRole = () => {
               <td>
                 Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu
               </td>
-              <td>Cập nhật</td>
+              <td style={{ cursor: "pointer" }} onClick={handleChangeDetail}>
+                Cập nhật
+              </td>
             </tr>
           </tbody>
         </Table>
