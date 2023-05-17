@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Alert, Button, Col, Input, Row, Typography } from "antd";
 import IMAGE_ACCOUNT_PAGE from "../../assent/login.png";
 import styles from "./Login.module.scss";
 import classNames from "classnames/bind";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
+import { AppContext } from "../../component/context/AppProvider";
+import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../../component/reudux/hook";
+import { getUser } from "../../component/reudux/slices/AccountSlices";
 // import { auth } from "../../component/fireBase/FireBase";
 const cx = classNames.bind(styles);
 
@@ -14,6 +18,8 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const { setUserid } = useContext(AppContext);
+  const dispatch = useAppDispatch();
   const handleLogin = () => {
     const auth = getAuth();
 
@@ -21,7 +27,12 @@ const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("/inforperson");
+        dispatch(getUser(user.uid));
+        setTimeout(() => {
+          navigate("/inforperson");
+        }, 1000);
+        setUserid(user.uid);
+
         console.log(user);
         // ...
       })

@@ -6,4 +6,5 @@ export interface User {
   account: string;
   password: string;
   state: string;
+  id: string;
 }

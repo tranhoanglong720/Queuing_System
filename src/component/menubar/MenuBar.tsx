@@ -10,7 +10,7 @@ import styles from "./MenuBar.module.scss";
 import classNames from "classnames/bind";
 import { useNavigate } from "react-router-dom";
 import FontAwesomeIcon from "@fortawesome/fontawesome-svg-core";
-
+import { getAuth, signOut } from "firebase/auth";
 const cx = classNames.bind(styles);
 const Menubar = () => {
   const { active, setActive } = useContext(AppContext);
@@ -48,6 +48,16 @@ const Menubar = () => {
   const handlePageDiary = () => {
     setActive("Diary");
     navigate("/managerdiary?name=Cài đặt hệ thống&list=Nhật ký hoạt động");
+  };
+  const handleSignOut = () => {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
   };
   return (
     <div className={cx("wrap_Menubar")}>
@@ -144,7 +154,7 @@ const Menubar = () => {
         Nhật ký người dùng
       </h6>
 
-      <div className={cx("logout")}>
+      <div className={cx("logout")} onClick={handleSignOut}>
         <img src={require("../../assent/logout.png")} />
         <p style={{ color: "rgba(255, 117, 6, 1)", margin: 0 }}> Đăng Xuất</p>
       </div>

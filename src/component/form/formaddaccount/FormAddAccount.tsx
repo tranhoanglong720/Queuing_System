@@ -33,6 +33,7 @@ const FormAddAccount = () => {
     account: "",
     password: "",
     state: "",
+    id: "",
   });
   const dispatch = useDispatch();
 

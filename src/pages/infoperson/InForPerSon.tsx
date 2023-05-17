@@ -8,9 +8,11 @@ import Col from "react-bootstrap/esm/Col";
 import styles from "./InforPerSon.module.scss";
 import classnames from "classnames/bind";
 import Info from "../../component/info/Info";
+import { useSelector } from "react-redux";
 
 const cx = classnames.bind(styles);
 const InForPerSon = () => {
+  
   return (
     <Container fluid className={cx("wrap_ListTicket")}>
       <Row>

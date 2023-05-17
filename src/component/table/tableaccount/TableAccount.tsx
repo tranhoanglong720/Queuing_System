@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./TableDevice.module.scss";
 import classnames from "classnames/bind";
 import { Container } from "react-bootstrap";
@@ -6,16 +6,30 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Table from "react-bootstrap/Table";
 import { useNavigate } from "react-router-dom";
+import { User } from "../../../type";
+import { AppContext } from "../../context/AppProvider";
+import { useAppDispatch } from "../../reudux/hook";
+import { getUser } from "../../reudux/slices/AccountSlices";
+import { useDispatch } from "react-redux";
 const cx = classnames.bind(styles);
 
-const TableAccount = () => {
+type Props = { data: User[] };
+const TableAccount = (props: Props) => {
   const navigate = useNavigate();
 
-  const handleChangeUpdate = () => {
-    navigate(
-      "/manageraccountupdate?name=Cài đặt hệ thống&list=Quản lý tài khoản&model=Cập nhật tài khoản"
-    );
+  const { setUserUpdate } = useContext(AppContext);
+  const dispatch = useAppDispatch();
+  // const dispatch=useDispatch();
+  const handleChangeUpdate = (uid: string) => {
+    setUserUpdate(uid);
+    dispatch(getUser(uid));
+    setTimeout(() => {
+      navigate(
+        "/manageraccountupdate?name=Cài đặt hệ thống&list=Quản lý tài khoản&model=Cập nhật tài khoản"
+      );
+    }, 1000);
   };
+
   return (
     <Container>
       <div className={cx("wrapListDevice")}>
@@ -32,25 +46,42 @@ const TableAccount = () => {
             </tr>
           </thead>
           <tbody className={cx("wrap_Table_body")}>
-            <tr>
-              <td>tuyetnguyen@12</td>
-              <td>Nguyen Văn A</td>
-              <td>0919256712</td>
-              <td>tuyetnguyen123@gmail.com</td>
-              <td>Kế toán</td>
-              <td>
-                <div>
-                  <img
-                    src={require("../../../assent/xanh.png")}
-                    style={{ marginBottom: 5, marginRight: 2 }}
-                  />
-                  Hoạt động
-                </div>
-              </td>
-              <td onClick={handleChangeUpdate} className={cx("txtDetail")}>
-                <a>Cập nhật</a>
-              </td>
-            </tr>
+            {props.data?.map((item: User, index) => (
+              <tr key={item.id}>
+                <td>{item.account}</td>
+                <td>{item.name}</td>
+                <td>{item.phone}</td>
+                <td>{item.email}</td>
+                <td>{item.role}</td>
+                {item.state === "Hoạt động" ? (
+                  <td>
+                    <div>
+                      <img
+                        src={require("../../../assent/xanh.png")}
+                        style={{ marginBottom: 5, marginRight: 2 }}
+                      />
+                      Hoạt động
+                    </div>
+                  </td>
+                ) : (
+                  <td>
+                    <div>
+                      <img
+                        src={require("../../../assent/do.png")}
+                        style={{ marginBottom: 5, marginRight: 2 }}
+                      />
+                      Ngưng hoạt động
+                    </div>
+                  </td>
+                )}
+                <td
+                  onClick={() => handleChangeUpdate(item.id)}
+                  className={cx("txtDetail")}
+                >
+                  <a>Cập nhật</a>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </div>
