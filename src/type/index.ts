@@ -8,3 +8,10 @@ export interface User {
   state: string;
   id: string;
 }
+export interface Role {
+  name: string;
+  des: string;
+  listFuncA: string[];
+  listFuncB: string[];
+  id: string;
+}
