@@ -5,6 +5,7 @@ import FilterService from "../../filter/filterservice/FilterDevice";
 import { Container, Row, Table, Col } from "react-bootstrap";
 import FilterServiceDetail from "../../filter/filterservicedetail/FilterServiceDetail";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const cx = classNames.bind(styles);
 
@@ -18,6 +19,10 @@ const FormDetailService = () => {
   const handleChangeBack = () => {
     navigate("/service?name=Dịch vụ&list=Danh sách dịch vụ");
   };
+  const ServiceDetail = useSelector(
+    (state: any) => state.ServiceSlices.Service
+  );
+
   return (
     <div>
       <Container className={cx("formserviceDetail")}>
@@ -27,29 +32,54 @@ const FormDetailService = () => {
               <h6 className={cx("txtFormTitle")}>Thông tin dịch vụ</h6>
               <div className={cx("serviceleft")}>
                 <label className={cx("lblMa")}>Mã dịch vụ: </label>
-                <label className={cx("txtMa")}>201</label>
+                <label className={cx("txtMa")}>{ServiceDetail.ma}</label>
               </div>
               <div className={cx("serviceleft")}>
                 <label className={cx("lblMa")}>Tên dịch vụ:</label>
-                <label className={cx("txtMa")}>Khám tim mạch</label>
+                <label className={cx("txtMa")}>{ServiceDetail.name}</label>
               </div>
               <div className={cx("serviceleft")}>
                 <label className={cx("lblMa")}>Mô tả: </label>
-                <label className={cx("txtMa")}>Chuyên các bệnh lý về tim</label>
+                <label className={cx("txtMa")}>{ServiceDetail.des}</label>
               </div>
+
               <h6 className={cx("txtFormTitle")}>Quy tắc cấp số</h6>
-              <div className={cx("serviceleft")}>
-                <label className={cx("lblMa")}>Tăng tự động: </label>
-                <label className={cx("txtMa")}>0001 đến 9999</label>
-              </div>
-              <div className={cx("serviceleft")}>
-                <label className={cx("lblMa")}>Prefix: </label>
-                <label className={cx("txtMa")}>0001</label>
-              </div>
-              <div className={cx("serviceleft")}>
-                <label className={cx("lblMa")}>Reset mỗi ngày: </label>
-                <label className={cx("txtMa")}>0001</label>
-              </div>
+              {ServiceDetail?.listRules?.map((item: string) => (
+                <>
+                  {item === "Tăng tự động" ? (
+                    <>
+                      <div className={cx("serviceleft")}>
+                        <label className={cx("lblMa")}>Tăng tự động: </label>
+                        <label className={cx("txtMa")}>0001 đến 9999</label>
+                      </div>
+                    </>
+                  ) : null}
+                  {item === "Prefix" ? (
+                    <>
+                      <div className={cx("serviceleft")}>
+                        <label className={cx("lblMa")}>Prefix: </label>
+                        <label className={cx("txtMa")}>0001</label>
+                      </div>
+                    </>
+                  ) : null}
+                  {item === "Surfix" ? (
+                    <>
+                      <div className={cx("serviceleft")}>
+                        <label className={cx("lblMa")}>Surfix </label>
+                        <label className={cx("txtMa")}>0001</label>
+                      </div>
+                    </>
+                  ) : null}
+                  {item === "Reset mỗi ngày" ? (
+                    <>
+                      <div className={cx("serviceleft")}>
+                        <label className={cx("lblMa")}>Reset mỗi ngày: </label>
+                        <label className={cx("txtMa")}>0001</label>
+                      </div>
+                    </>
+                  ) : null}
+                </>
+              ))}
             </div>
           </Col>
           <Col lg={7}>

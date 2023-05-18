@@ -3,10 +3,14 @@ import { useDispatch } from "react-redux";
 
 import AccountSlice from "./slices/AccountSlices";
 import RoleSlices from "./slices/RoleSlices";
+import ServiceSlices from "./slices/ServiceSlieces";
+import LevelSlices from "./slices/LevelSlices";
 const store = configureStore({
   reducer: {
     AcountSilces: AccountSlice.reducer,
     RoleSlices: RoleSlices.reducer,
+    ServiceSlices: ServiceSlices.reducer,
+    LevelSlices: LevelSlices.reducer,
   },
 });
 export type RootState = ReturnType<typeof store.getState>;

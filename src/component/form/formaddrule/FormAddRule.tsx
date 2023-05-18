@@ -14,10 +14,7 @@ import { Role } from "../../../type";
 import { useDispatch } from "react-redux";
 import RoleSlices from "../../reudux/slices/RoleSlices";
 const cx = classNames.bind(styles);
-interface Filter {
-  gate: string[];
-  // các thuộc tính khác
-}
+
 const FormAddRule = () => {
   const [role, setRole] = useState<Role>({
     name: "",

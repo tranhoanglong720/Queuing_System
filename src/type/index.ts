@@ -15,3 +15,20 @@ export interface Role {
   listFuncB: string[];
   id: string;
 }
+export interface Service {
+  name: string;
+  des: string;
+  id: string;
+  ma: string;
+  listRules: string[];
+  stateService: string;
+}
+export interface Level {
+  STT: string;
+  customer: string;
+  namedv: string;
+  dateCreate: string;
+  experDate: string;
+  stateLevel: string;
+  source: string;
+}
