@@ -32,3 +32,11 @@ export const ListLevelSelector = (state: any) => state.LevelSlices;
 export const ListLevelFind = createSelector(ListLevelSelector, (Level) => {
   return Level.ListLevel;
 });
+
+//Device
+
+export const ListDeviceSelector = (state: any) => state.DeviceSlices;
+
+export const ListDeviceFind = createSelector(ListDeviceSelector, (device) => {
+  return device.ListDevice;
+});

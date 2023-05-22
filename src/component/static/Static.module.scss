@@ -1,0 +1,32 @@
+.wrapStatic {
+  background-color: white;
+  height: 120px;
+  width: 250px;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 15px;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.txtPercent {
+  background-color: rgba(255, 149, 1, 0.15);
+  color: rgba(255, 145, 56, 1);
+  padding: 5px;
+  border-radius: 15px;
+}
+.txtQuantity {
+  color: rgba(83, 82, 97, 1);
+}

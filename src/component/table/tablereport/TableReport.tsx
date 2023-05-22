@@ -6,9 +6,10 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Table from "react-bootstrap/Table";
 import { useNavigate } from "react-router-dom";
+import { Level } from "../../../type";
 const cx = classnames.bind(styles);
-
-const TableReport = () => {
+type Props = { data: Level[] };
+const TableReport = (props: Props) => {
   const navigate = useNavigate();
   const handleChangeDetail = () => {
     navigate(
@@ -30,22 +31,36 @@ const TableReport = () => {
             </tr>
           </thead>
           <tbody className={cx("wrap_Table_body")}>
-            <tr>
-              <td>2010001</td>
-              <td>Khám tim mạch</td>
-              <td>07:20 - 07/10/2021</td>
-              <td>
-                <div>
-                  {" "}
-                  <img
-                    src={require("../../../assent/xanh.png")}
-                    style={{ marginBottom: 5, marginRight: 2 }}
-                  />
-                  Đang chờ
-                </div>
-              </td>
-              <td>Kiosk</td>
-            </tr>
+            {props.data?.map((item: Level, index) => (
+              <tr key={item.id}>
+                <td>{item.STT}</td>
+                <td>{item.namedv}</td>
+                <td>{item.dateCreate}</td>
+                {item.stateLevel === "Đang sử dụng" ? (
+                  <td>
+                    <div>
+                      <img
+                        src={require("../../../assent/xanh.png")}
+                        style={{ marginBottom: 5, marginRight: 2 }}
+                      />
+                      Đang sử dụng
+                    </div>
+                  </td>
+                ) : (
+                  <td>
+                    <div>
+                      <img
+                        src={require("../../../assent/do.png")}
+                        style={{ marginBottom: 5, marginRight: 2 }}
+                      />
+                      Bỏ qua
+                    </div>
+                  </td>
+                )}
+
+                <td>{item.source}</td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </div>

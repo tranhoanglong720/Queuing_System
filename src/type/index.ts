@@ -24,6 +24,7 @@ export interface Service {
   stateService: string;
 }
 export interface Level {
+  id: string;
   STT: string;
   customer: string;
   namedv: string;
@@ -31,4 +32,14 @@ export interface Level {
   experDate: string;
   stateLevel: string;
   source: string;
+}
+export interface Device {
+  id: string;
+  matb: string;
+  nametb: string;
+  ip: string;
+  Listdv: string[];
+  loaitb: string;
+  user: string;
+  password: string;
 }

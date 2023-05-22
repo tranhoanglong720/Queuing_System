@@ -63,6 +63,7 @@ const FormAddLevel = () => {
     experDate: experDate,
     stateLevel: "Đang sử dụng",
     source: "Kiosk",
+    id: "",
   });
   const handleIn = () => {
     setOpenIn(true);

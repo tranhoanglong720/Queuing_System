@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./FormAddDevice.module.scss";
 import classNames from "classnames/bind";
 
@@ -7,19 +7,39 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import { Button, Input, Select } from "antd";
 import type { SelectProps } from "antd";
+import { Device } from "../../../type";
+import { useSelector } from "react-redux";
+import { ListServiceFind } from "../../reudux/selector";
+import { useAppDispatch } from "../../reudux/hook";
+import DeviceSlices from "../../reudux/slices/DeviceSlices";
 const cx = classNames.bind(styles);
 const FormAddDevice = () => {
+  const ListService = useSelector(ListServiceFind);
   const options: SelectProps["options"] = [];
-
-  for (let i = 10; i < 36; i++) {
+  for (let i = 0; i < ListService.length; i++) {
     options.push({
-      label: i.toString(36) + i,
-      value: i.toString(36) + i,
+      label: ListService[i].name,
+      value: ListService[i].name,
     });
   }
 
   const handleChange = (value: string[]) => {
+    setDevice({ ...device, Listdv: value });
     console.log(`selected ${value}`);
+  };
+  const [device, setDevice] = useState<Device>({
+    ip: "",
+    id: "",
+    matb: "",
+    Listdv: [],
+    user: "",
+    password: "",
+    loaitb: "",
+    nametb: "",
+  });
+  const dispatch = useAppDispatch();
+  const handleAdd = () => {
+    dispatch(DeviceSlices.actions.AddDevice(device));
   };
   return (
     <div>
@@ -31,19 +51,35 @@ const FormAddDevice = () => {
               <p className={cx("Inputtemptxt")}>
                 Mã thiết bị:<label style={{ color: "red" }}>*</label>
               </p>
-              <Input placeholder="Nhập mã thiết bị" style={{ width: "100%" }} />
+              <Input
+                placeholder="Nhập mã thiết bị"
+                style={{ width: "100%" }}
+                onChange={(e: any) => {
+                  setDevice({ ...device, matb: e.target.value });
+                }}
+              />
             </div>
             <div className={cx("Inputtemp")}>
               <p className={cx("Inputtemptxt")}>
                 Tên thiết bị:<label style={{ color: "red" }}>*</label>
               </p>
-              <Input placeholder="Nhập tên thiết bị" />
+              <Input
+                placeholder="Nhập tên thiết bị"
+                onChange={(e: any) => {
+                  setDevice({ ...device, nametb: e.target.value });
+                }}
+              />
             </div>
             <div className={cx("Inputtemp")}>
               <p className={cx("Inputtemptxt")}>
                 Địa chỉ IP:<label style={{ color: "red" }}>*</label>
               </p>
-              <Input placeholder="Nhập địa chỉ IP" />
+              <Input
+                placeholder="Nhập địa chỉ IP"
+                onChange={(e: any) => {
+                  setDevice({ ...device, ip: e.target.value });
+                }}
+              />
             </div>
           </div>
           <div className={cx("addRight")}>
@@ -61,19 +97,32 @@ const FormAddDevice = () => {
                   { value: "Kiosk", label: "Kiosk" },
                   { value: "Display counter", label: "Display counter" },
                 ]}
+                onChange={(value: string) => {
+                  setDevice({ ...device, loaitb: value });
+                }}
               />
             </div>
             <div className={cx("Inputtemp")}>
               <p className={cx("Inputtemptxt")}>
                 Tên đăng nhập:<label style={{ color: "red" }}>*</label>
               </p>
-              <Input placeholder="Nhập tên thiết bị" />
+              <Input
+                placeholder="Nhập tên đăng nhập"
+                onChange={(e: any) => {
+                  setDevice({ ...device, user: e.target.value });
+                }}
+              />
             </div>
             <div className={cx("Inputtemp")}>
               <p className={cx("Inputtemptxt")}>
                 Mật khẩu:<label style={{ color: "red" }}>*</label>
               </p>
-              <Input placeholder="Nhập địa chỉ IP" />
+              <Input
+                placeholder="Nhập mật khẩu"
+                onChange={(e: any) => {
+                  setDevice({ ...device, password: e.target.value });
+                }}
+              />
             </div>
           </div>
         </div>
@@ -98,7 +147,9 @@ const FormAddDevice = () => {
       </div>
       <div className={cx("btn")}>
         <button className={cx("btnCancel")}>Hủy bỏ</button>
-        <button className={cx("btnAdd")}>Thêm thiết bị</button>
+        <button className={cx("btnAdd")} onClick={handleAdd}>
+          Thêm thiết bị
+        </button>
       </div>
     </div>
   );

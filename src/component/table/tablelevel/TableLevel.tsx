@@ -6,16 +6,17 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Table from "react-bootstrap/Table";
 import { useNavigate } from "react-router-dom";
+import { Level } from "../../../type";
 const cx = classnames.bind(styles);
-
-const TableLevel = () => {
+type Props = { data: Level[] };
+const TableLevel = (props: Props) => {
   const navigate = useNavigate();
   const handleChangeDetail = () => {
     navigate(
       "/leveldetail?name=Cấp số&list=Danh sách cấp số&model=Chi tiết cấp số"
     );
   };
-
+  console.log(props.data);
   return (
     <Container>
       <div className={cx("wrapListDevice")}>
@@ -33,26 +34,41 @@ const TableLevel = () => {
             </tr>
           </thead>
           <tbody className={cx("wrap_Table_body")}>
-            <tr>
-              <td>2010001</td>
-              <td>Lê Huỳnh Ái Vân</td>
-              <td>Khám tim mạch</td>
-              <td>14:35 - 07/11/2021</td>
-              <td>14:35 - 12/11/2021</td>
-              <td>
-                <div>
-                  <img
-                    src={require("../../../assent/do.png")}
-                    style={{ marginBottom: 5, marginRight: 2 }}
-                  />
-                  Bỏ qua
-                </div>
-              </td>
-              <td>Kiosk</td>
-              <td onClick={handleChangeDetail} className={cx("txtDetail")}>
-                Chi tiết
-              </td>
-            </tr>
+            {props.data?.map((item: Level, index) => (
+              <tr key={item.id}>
+                <td>{item.STT}</td>
+                <td>{item.customer}</td>
+                <td>{item.namedv}</td>
+                <td>{item.dateCreate}</td>
+                <td>{item.experDate}</td>
+                {item.stateLevel === "Đang sử dụng" ? (
+                  <td>
+                    <div>
+                      <img
+                        src={require("../../../assent/xanh.png")}
+                        style={{ marginBottom: 5, marginRight: 2 }}
+                      />
+                      Đang sử dụng
+                    </div>
+                  </td>
+                ) : (
+                  <td>
+                    <div>
+                      <img
+                        src={require("../../../assent/do.png")}
+                        style={{ marginBottom: 5, marginRight: 2 }}
+                      />
+                      Bỏ qua
+                    </div>
+                  </td>
+                )}
+
+                <td>{item.source}</td>
+                <td onClick={handleChangeDetail} className={cx("txtDetail")}>
+                  Chi tiết
+                </td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </div>

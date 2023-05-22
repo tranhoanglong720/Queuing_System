@@ -1,0 +1,28 @@
+.txtTitle {
+  color: rgba(255, 117, 6, 1);
+  margin-bottom: 15px;
+}
+.wrap_divce {
+  height: 100vh;
+  background-color: #f9f6f4;
+}
+.static {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Chart {
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+}
+.about {
+  background-color: white;
+  border-radius: 15px;
+}
+.about_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

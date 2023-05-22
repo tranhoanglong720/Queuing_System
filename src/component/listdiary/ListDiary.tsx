@@ -6,6 +6,7 @@ import classNames from "classnames/bind";
 import FilterLevel from "../filter/filterlevel/FilterLevel";
 import TableReport from "../table/tablereport/TableReport";
 import Search from "antd/es/input/Search";
+import TableDiary from "../table/tablediary/TableDiary";
 
 const cx = classNames.bind(styles);
 
@@ -30,7 +31,7 @@ const ListDiary = () => {
             <Search />
           </div>
         </div>
-        <TableReport />
+        <TableDiary />
       </div>
     </Container>
   );

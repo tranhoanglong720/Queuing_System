@@ -7,14 +7,23 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import { Button, Input, Select } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Device } from "../../../type";
+import { useAppDispatch } from "../../reudux/hook";
+import { getDevice } from "../../reudux/slices/DeviceSlices";
 
 const cx = classNames.bind(styles);
 const FormDetailDevice = () => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const devices = useSelector((state: any) => state.DeviceSlices.Device);
   const handleChangeUpdate = () => {
-    navigate(
-      "/deviceupdate?name=Thiết bị&list=Danh sách thiết bị&model=Cập nhật thiết bị"
-    );
+    dispatch(getDevice(devices.id));
+    setTimeout(() => {
+      navigate(
+        "/deviceupdate?name=Thiết bị&list=Danh sách thiết bị&model=Cập nhật thiết bị"
+      );
+    }, 1000);
   };
   return (
     <div>
@@ -33,7 +42,7 @@ const FormDetailDevice = () => {
               <p className={cx("Inputtemptxt")}>
                 Mã thiết bị:
                 <label style={{ color: "rgba(83, 82, 97, 1)", marginLeft: 15 }}>
-                  KIO_01
+                  {devices.matb}
                 </label>
               </p>
             </div>
@@ -41,7 +50,7 @@ const FormDetailDevice = () => {
               <p className={cx("Inputtemptxt")}>
                 Tên thiết bị:
                 <label style={{ color: "rgba(83, 82, 97, 1)", marginLeft: 15 }}>
-                  Kiosk
+                  {devices.nametb}
                 </label>
               </p>
             </div>
@@ -49,7 +58,7 @@ const FormDetailDevice = () => {
               <p className={cx("Inputtemptxt")}>
                 Địa chỉ IP:
                 <label style={{ color: "rgba(83, 82, 97, 1)", marginLeft: 15 }}>
-                  128.172.308
+                  {devices.ip}
                 </label>
               </p>
             </div>
@@ -59,7 +68,7 @@ const FormDetailDevice = () => {
               <p className={cx("Inputtemptxt")}>
                 Loại thiết bị:
                 <label style={{ color: "rgba(83, 82, 97, 1)", marginLeft: 15 }}>
-                  Kiosk
+                  {devices.loaitb}
                 </label>
               </p>
             </div>
@@ -67,7 +76,7 @@ const FormDetailDevice = () => {
               <p className={cx("Inputtemptxt")}>
                 Tên đăng nhập:
                 <label style={{ color: "rgba(83, 82, 97, 1)", marginLeft: 15 }}>
-                  Linhkyo011
+                  {devices.user}
                 </label>
               </p>
             </div>
@@ -75,7 +84,7 @@ const FormDetailDevice = () => {
               <p className={cx("Inputtemptxt")}>
                 Mật khẩu:
                 <label style={{ color: "rgba(83, 82, 97, 1)", marginLeft: 15 }}>
-                  CMS
+                  {devices.password}
                 </label>
               </p>
             </div>
@@ -85,8 +94,7 @@ const FormDetailDevice = () => {
           <p className={cx("Inputtemptxt")}>
             Dịch vụ sử dụng:
             <label style={{ color: "rgba(83, 82, 97, 1)", marginLeft: 15 }}>
-              Khám tim mạch, Khám sản - Phụ khoa, Khám răng hàm mặt, Khám tai
-              mũi họng, Khám hô hấp, Khám tổng quát.
+              {devices.Listdv.join(",")}
             </label>
           </p>
         </div>
